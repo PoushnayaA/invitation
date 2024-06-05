@@ -1206,7 +1206,7 @@ button,
 
 body {
   color: rgb(205, 197, 197);
-  font-family: "Dancing Script", cursive;
+  font-family: "Roboto Slab", serif;
 }
 
 .text-block {
@@ -1255,13 +1255,13 @@ body {
 }
 
 .intro h1 {
-  font-family: "Pacifico", cursive;
+  font-family: "Roboto Slab", serif;
   font-size: 48px;
   margin-bottom: 20px;
 }
 
 .intro p {
-  font-family: "Dancing Script", cursive;
+  font-family: "Roboto Slab", serif;
   font-size: 24px;
   margin-bottom: 10px;
 }
