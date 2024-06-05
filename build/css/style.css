@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* stylelint-disable */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -1229,6 +1230,12 @@ body {
   position: relative;
   background-position: 50% 20%;
   z-index: 2;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 461px) {
+  .intro {
+    margin-bottom: 60px;
+  }
 }
 .intro h1 {
   margin: 0;
@@ -1285,6 +1292,12 @@ body {
   grid-template-columns: 1fr 2fr;
   gap: 10px;
 }
+@media screen and (min-width: 800px) {
+  .photo div {
+    -ms-grid-columns: 1fr 4fr;
+    grid-template-columns: 1fr 4fr;
+  }
+}
 .photo div p {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1297,19 +1310,43 @@ body {
           justify-content: center;
 }
 .photo .btn {
-  background-color: rgb(133, 114, 110);
+  background-color: rgb(84, 73, 70);
   border-radius: 10px;
   font-weight: 700;
-  width: 50%;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+@media screen and (max-width: 460px) {
+  .photo .btn {
+    text-align: center !important;
+    margin-bottom: 20px;
+  }
 }
 .photo img {
   width: 100%;
-  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0.5;
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
   height: 100%;
-  max-height: 300px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 460px) {
+  .photo img {
+    max-height: 300px;
+  }
+}
+@media screen and (min-width: 461px) {
+  .photo img {
+    max-height: 390px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .photo img {
+    max-height: 270px;
+  }
 }
 .photo .text {
   display: -webkit-box;
@@ -1333,7 +1370,8 @@ body {
             align-items: center;
   }
 }
-.photo .text h2, .photo .text p {
+.photo .text h2,
+.photo .text p {
   margin: 0;
 }
 @media screen and (max-width: 460px) {
@@ -1362,6 +1400,16 @@ body {
 .photo-reverse div {
   -ms-grid-columns: 2fr 1fr;
   grid-template-columns: 2fr 1fr;
+}
+@media screen and (min-width: 800px) {
+  .photo-reverse div {
+    -ms-grid-columns: 4fr 1fr;
+    grid-template-columns: 4fr 1fr;
+  }
+}
+.photo-reverse div img {
+  -o-object-position: 20% 20%;
+     object-position: 20% 20%;
 }
 .photo-reverse .text {
   -webkit-box-align: start;
@@ -1425,6 +1473,52 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+.modal__description {
+  color: rgb(241, 234, 234);
+}
+.modal__description a {
+  color: rgb(204, 191, 191);
+  text-shadow: 2px 2px rgba(189, 189, 179, 0.3215686275);
+}
+
+.modal__content {
+  background-color: rgb(133, 114, 110);
+  border-radius: 10px;
+}
+
+.photo {
+  position: relative;
+  padding: 30px 20px;
+}
+.photo::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background-color: rgba(133, 114, 110, 0.488);
+  top: 0;
+  left: 20%;
+  right: 20%;
+}
+@media screen and (min-width: 461px) {
+  .photo {
+    padding: 60px 20px;
+  }
+}
+
+.photo {
+  /* Другие стили */
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+.animate-photo {
+  opacity: 1;
+  visibility: visible; /* Делаем элемент видимым */
 }
 
 /* @mixin hover-focus {
